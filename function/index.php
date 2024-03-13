@@ -1,5 +1,9 @@
 <?php
 
-function helloWorld() { echo "Olá Mundo!"; }
+function helloWorld() {
+    return "Olá Mundo!";
+}
 
-helloWorld();
+$mensagem = helloWorld();
+
+echo "<h1 style='color:green'>" . $mensagem . "</h1>";
