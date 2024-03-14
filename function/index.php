@@ -1,9 +1,19 @@
 <?php
 
-function helloWorld() {
-    return "Olá Mundo!";
+function somar($arg1, $arg2)
+{
+    $valor = $arg1 + $arg2;
+    return $valor;
 }
 
-$mensagem = helloWorld();
+$resultado = somar(5, 3);
 
-echo "<h1 style='color:green'>" . $mensagem . "</h1>";
+echo $resultado;
+
+// function helloWorld() {
+//     return "Olá Mundo!";
+// }
+
+// $mensagem = helloWorld();
+
+// echo "<h1 style='color:green'>" . $mensagem . "</h1>";
