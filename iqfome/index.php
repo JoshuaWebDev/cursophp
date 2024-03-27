@@ -28,7 +28,7 @@ if ($dbFile == "") {
         echo "<b>Estabelecimento: </b>" . ucfirst($temp[4]) . "<br>";
         echo "<a href='update.php'>Editar</a>";
         echo " | ";
-        echo "<a href='show.php'>Detalhes</a>";
+        echo "<a href='show.php?id=".$temp[0]."'>Detalhes</a>";
         echo "<hr>";
     }
 }
