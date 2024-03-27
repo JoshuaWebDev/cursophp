@@ -1,11 +1,20 @@
 <?php
+$dbFile = file_get_contents("db.csv");
 $description = $_POST['description'] ?? "";
 $category    = $_POST['category']    ?? "";
+$price       = $_POST['price']       ?? "";
 $local       = $_POST['local']       ?? "";
 $dados       = "";
+$totalItens  = 0;
+
+if ($dbFile != "") {
+    $dbFile = trim($dbFile);
+    $itens = explode("\n", $dbFile);
+    $totalItens = count($itens);
+}
 
 if ($description && $category && $local) {
-    $dados = "\n" . $description . "," . $category . "," . $local;
+    $dados = "\n" . $totalItens+1 . "," . $description . "," . $category . "," . $price . "," . $local;
     file_put_contents('db.csv', $dados, FILE_APPEND);
     echo "Dados salvos com sucesso na base de dados!";
 }
@@ -27,6 +36,9 @@ include_once("top.php");
             <option value="sobremesa">Sobremesa</option>
         </select>
         <br>
+
+        <label>Preço: </label>
+        <input type="text" name="price"><br>
 
         <label>Estabelecimento</label>
         <input type="text" name="local"><br>
