@@ -1,19 +1,15 @@
 <?php
 
-function somar($arg1, $arg2)
+function cadastrarItem($nome, $quantidade)
 {
-    $valor = $arg1 + $arg2;
-    return $valor;
+    $mensagem = "<p><b>Nome: </b> <i>". strtolower($nome) . "</i> </p>";
+    if ($quantidade > 0) {
+        return $mensagem  . "<p><b>Quantidade: </b> <i>$quantidade</i></p>";
+    }
+
+    return "<strong>Você precisa informar a quantidade!</strong>";
 }
 
-$resultado = somar(5, 3);
+$x = cadastrarItem("Notebook Asus", 10);
 
-echo $resultado;
-
-// function helloWorld() {
-//     return "Olá Mundo!";
-// }
-
-// $mensagem = helloWorld();
-
-// echo "<h1 style='color:green'>" . $mensagem . "</h1>";
+echo $x;
