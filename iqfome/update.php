@@ -19,7 +19,8 @@ foreach($itens as $item) {
 
 <h1>Alterar Dados do Item <?php echo $id; ?></h1>
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form action="updater.php" method="post">
+    <input name="id" type="hidden" value="<?php echo $itemSelecionado[0]; ?>">
     <label>Descrição: </label>
     <input type="text" name="description" value="<?php echo $itemSelecionado[1]; ?>"><br>
 
@@ -46,7 +47,7 @@ foreach($itens as $item) {
     <label>Estabelecimento</label>
     <input type="text" name="local" value="<?php echo $itemSelecionado[4]; ?>"><br>
 
-    <input type="submit">
+    <input type="submit" value="Alterar">
 </form>
 
 <a href="index.php">Voltar</a>
